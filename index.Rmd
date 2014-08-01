@@ -69,7 +69,7 @@ highlighter: highlight.js
 .fragment But which data?
 
 <!--
-  1. Answer the "so what" question
+  1. Define the "so what" question
   2. Know when to throw data away
 - ≠ "let the data speak for itself"
 -->
@@ -83,10 +83,12 @@ highlighter: highlight.js
 .fragment Design taken for granted
 
 <!--
-- Define the "so what" question
    1. Answer-driven form
+      - intuitive form
+      - e.g., kids using iPads
    2. Ease comprehension
    3. Leverage existing knowledge
+   
 -->
 
 ***
@@ -99,6 +101,8 @@ highlighter: highlight.js
 
 <!--
 - The right medium
+  - Stream graphs and sankey diagrams are really cool, but... necessary?
+  - Show the NYT and Propublica examples
 - Convey the message
 -->
 
@@ -114,7 +118,8 @@ highlighter: highlight.js
 - Think most "infographics"
 - Show relationships
 - Encourage questions
-- Small multiples are great here
+- Squeeze them in when you can! >> Small multiples
+- Address the "compared to what" question
 -->
 
 ***
@@ -130,6 +135,9 @@ highlighter: highlight.js
   2. Correlations
   3. Probabilities
   4. Distributions
+  
+  Think about the rules of grammar
+  - Keep concepts together
  -->
 
 ***
@@ -139,6 +147,10 @@ highlighter: highlight.js
 <br>
 
 .fragment Color, shape, and layout
+
+<!--
+  Be conscious of variable types
+-->
 
 ***
 
@@ -202,6 +214,7 @@ An [action plan](http://flowingdata.com/2012/02/03/an-action-plan-for-data-scien
 -->
 
 ---
+
 ## Read in the datasets
 
 ```{r eval = TRUE}
