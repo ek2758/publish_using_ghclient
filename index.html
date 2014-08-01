@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Social Networks on Facebook</title>
+  <meta name="description" content="">
+  <meta name="author" content="Eurry Kim">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="./frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="./frameworks/revealjs/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="./highlighters/highlight.js/css/zenburn.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  <h1>Hi Princeton.</h1>
+  <h3>I&#39;m Eurry.</h3>
+
+<p><small> <a href="http://instagram.com/eurryPlot">@instagram</a> | <a href="http://twitter.com/eurryPlot">@twitter</a> </small></p>
+
+</section>
+<section class='' data-state='' id='slide-2'>
+  <h1>Facebook</h1>
+  <h2>Marketing Science</h2>
+
+<p><img src='visuals/marketingScience-01.png'></p>
+
+</section>
+<section class='' data-state='' id='slide-3'>
+  <h2>Today&#39;s Agenda</h2>
+  <p><br></p>
+
+<ul>
+<li>Graphic principles</li>
+<li>What is network data</li>
+<li>Analyze my Facebook social network
+
+<ol>
+<li>In <a href="http://www.r-project.org/">R</a>
+<br>
+a. A little Illustrator </li>
+<li>In <a href="http://gephi.github.io/">Gephi</a></li>
+</ol></li>
+<li>Review social TV conversation data from Facebook</li>
+</ul>
+
+</section>
+<section>
+   <section class='' data-state=''>
+    <h1>The 2012 Presidential Election</h1>
+    
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Gallup</h2>
+
+<p><img src='visuals/imageComparison_gallup-01.png' style="float:left"></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>NY Times</h2>
+
+<p><img src='visuals/imageComparison_nyt-01.png' style="float:right"></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+<section>
+   <section class='' data-state=''>
+    <h1>Tufte Principles for Graphical Excellence</h1>
+    
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>1. Show the data</h2>
+
+<p><br></p>
+
+<p class='fragment'>But which data?</p>
+
+<!--
+  1. Answer the "so what" question
+  2. Know when to throw data away
+- ≠ "let the data speak for itself"
+-->
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>2. Induce the viewer to think about the substance</h2>
+
+<p><br></p>
+
+<p class='fragment'>Design taken for granted</p>
+
+<!--
+- Define the "so what" question
+   1. Answer-driven form
+   2. Ease comprehension
+   3. Leverage existing knowledge
+-->
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>3. Avoid distorting what the data have to say</h2>
+
+<p><br></p>
+
+<p class='fragment'>Clarity</p>
+
+<!--
+- The right medium
+- Convey the message
+-->
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>4. Present many numbers in a small space</h2>
+
+<p><br></p>
+
+<p class='fragment'>Data density</p>
+
+<!--
+- Think most "infographics"
+- Show relationships
+- Encourage questions
+- Small multiples are great here
+-->
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>5. Make large data sets coherent</h2>
+
+<p><br></p>
+
+<p class='fragment'>The right metrics</p>
+
+<!--
+  1. Patterns
+  2. Correlations
+  3. Probabilities
+  4. Distributions
+ -->
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>6. Encourage the eye to compare different pieces of data</h2>
+
+<p><br></p>
+
+<p class='fragment'>Color, shape, and layout</p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>7. Reveal the data at several levels of detail</h2>
+
+<p><br></p>
+
+<p class='fragment'>The right data cuts</p>
+
+<!--
+  1. Gallup > Party, voter likelihood
+  2. NY Times > Party, state
+-->
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>8. Serve a reasonably clear purpose</h2>
+
+<p><br></p>
+
+<blockquote>
+<p>Not everything that counts can be counted, and not everything that can be counted counts.</p>
+</blockquote>
+
+<p><br></p>
+
+<p><cite>Einstein</cite></p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>9. Be closely integrated with the statistical and verbal descriptions of a data set.</h2>
+
+<!--
+- Reasonable takeaways
+- Logical relationships
+- Statistically valid inferences
+-->
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+<section class='' data-state='' id='slide-6'>
+  <h1>Network data</h1>
+  <h2>nodes / actors / people</h2>
+
+<h2>edges / ties / relationships</h2>
+
+</section>
+<section class='' data-state='' id='slide-7'>
+  <h2>Cleveland, W.S. (2001)</h2>
+  <p>An <a href="http://flowingdata.com/2012/02/03/an-action-plan-for-data-science-a-decade-ago/">action plan</a> for data science </p>
+
+<p><img src='visuals/cleveland2_transparent-01.png'></p>
+
+</section>
+<section>
+   <section class='' data-state=''>
+    <h2>Let&#39;s check out my network of Facebook friends</h2>
+    <p><img src='visuals/eurry_fbTimeline.png'></p>
+
+<!--
+- Clean data is not easy to come by in the "real world"
+  - I had to run 4 Hive queries
+-->
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+<section class='' data-state='' id='slide-9'>
+  <h2>Read in the datasets</h2>
+  <pre><code class="r"># Install package
+
+## Not run: install.packages(&quot;igraph&quot;)
+library(igraph)
+
+# Read in edgelist
+eurry.el &lt;- read.csv(&quot;datasets/eurry_fb_network.csv&quot;, header = TRUE)
+
+# Read in name to ID mappings
+id.map &lt;- read.csv(&quot;datasets/friend_names.csv&quot;, header = TRUE, stringsAsFactors = FALSE)
+
+library(pander)
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;pander&#39;
+## 
+## The following object is masked from &#39;package:shiny&#39;:
+## 
+##     p
+</code></pre>
+
+<pre><code class="r">pander(id.map[1,])
+</code></pre>
+
+<pre><code>## 
+## ---------------------
+##  userid    firstname 
+## --------- -----------
+## 500058493    Eurry   
+## ---------------------
+</code></pre>
+
+</section>
+<section>
+   <section class='' data-state=''>
+    <h1>90% of the job</h1>
+    <p class='fragment'>Cleaning/prepping data</p>
+
+<p class='fragment'>#sorrynotsorry</p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Turn data.frames into graph objects</h2>
+
+<pre><code class="r"># Turn edgelist into graph object
+eurry.graph &lt;- graph.data.frame(eurry.el, vertices = id.map, directed = FALSE)
+
+# Check object type
+class(eurry.graph)
+</code></pre>
+
+<pre><code>## [1] &quot;igraph&quot;
+</code></pre>
+
+<pre><code class="r"># Simplify the edgelist
+eurry.graph2 &lt;- simplify(eurry.graph, remove.multiple = TRUE, remove.loops = TRUE)
+</code></pre>
+
+<p><br></p>
+
+<p class='fragment'>Wait. What&#39;s an edgelist?</p>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>An edgelist</h2>
+
+<p><br></p>
+
+<table style="width:400px; margin-left: auto; margin-right: auto;">
+  <tr>
+    <td><strong>fbPerson</strong></td>
+    <td><strong>fbFriend</strong></td>
+  </tr>
+  <tr>
+    <td>Eurry</td>
+    <td>Dan</td>
+  </tr>
+  <tr>
+    <td>Eurry</td>
+    <td>Neha</td>
+  </tr>
+  <tr>
+    <td>Eurry</td>
+    <td>Sam</td>
+  </tr>
+  <tr>
+    <td>Eurry</td>
+    <td>Jorge</td>
+  </tr>
+  <tr>
+    <td>Eurry</td>
+    <td>Jerry</td>
+  </tr>
+  <tr>
+    <td>Eurry</td>
+    <td>Alva</td>
+  </tr>
+  <tr>
+    <td>Eurry</td>
+    <td>Damola</td>
+  </tr>
+  <tr>
+    <td>Dan</td>
+    <td>Annie</td>
+  </tr>
+  <tr>
+    <td>Dan</td>
+    <td>Neha</td>
+  </tr>
+</table>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+   <section class='' data-state=''>
+    <h2>Check the data</h2>
+
+<pre><code class="r">me &lt;- get.vertex.attribute(eurry.graph2, name = &quot;firstname&quot;)[1]
+pander(me)
+</code></pre>
+
+<pre><code>## Eurry
+</code></pre>
+
+<pre><code class="r"># Assign vertex labels
+V(eurry.graph2)$name &lt;- get.vertex.attribute(eurry.graph2, name = &quot;firstname&quot;)
+</code></pre>
+
+    <aside class='notes'>
+      
+    </aside>
+   </section>
+</section>
+<section class='' data-state='' id='slide-11'>
+  <h2>Some network diagnostics</h2>
+  <pre><code class="r"># How many edges?
+ecount(eurry.graph2)
+</code></pre>
+
+<pre><code>## [1] 6228
+</code></pre>
+
+<pre><code class="r"># How many vertices?
+vcount(eurry.graph2)
+</code></pre>
+
+<pre><code>## [1] 565
+</code></pre>
+
+<pre><code class="r"># Fewest ties to get from one person to another?
+diameter(eurry.graph2)
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+<pre><code class="r"># Collect largest cliques in my network
+lc &lt;- largest.cliques(eurry.graph2)
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-12'>
+  <h2>The largest clique in my Facebook social network</h2>
+  <pre><code class="r"># Plot my largest clique
+plot(induced.subgraph(eurry.graph2, lc[[1]]), 
+     layout=layout.fruchterman.reingold)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
+
+</section>
+<section class='' data-state='' id='slide-13'>
+  <h2>Change some visual attributes</h2>
+  <pre><code class="r">plot(induced.subgraph(eurry.graph2, lc[[1]]), 
+     layout=layout.fruchterman.reingold,
+     edge.color = &quot;gray80&quot;,
+     vertex.color = &quot;light blue&quot;,
+     vertex.size = 5.0)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+</section>
+<section class='' data-state='' id='slide-14'>
+  <h2>Assign attributes to vertices</h2>
+  <pre><code class="r">V(eurry.graph2)$color &lt;- &quot;light blue&quot;
+V(eurry.graph2)$vertex.size &lt;- 9.0
+V(eurry.graph2)$shape &lt;- &quot;square&quot;
+plot(induced.subgraph(eurry.graph2, lc[[1]]), 
+     layout=layout.fruchterman.reingold, 
+     edge.color = &quot;gray80&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+
+</section>
+<section class='' data-state='' id='slide-15'>
+  <h2>Circles look better</h2>
+  <pre><code class="r"># Not run: V(eurry.graph2)$color &lt;- &quot;light blue&quot;
+# Not run: V(eurry.graph2)$vertex.size &lt;- 9.0
+V(eurry.graph2)$shape &lt;- &quot;circle&quot;
+V(eurry.graph2)$frame.color &lt;- &quot;transparent&quot;
+plot(induced.subgraph(eurry.graph2, lc[[1]]), 
+     layout=layout.fruchterman.reingold, 
+     edge.color = &quot;gray80&quot;,
+     vertex.size = 9.0)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8"> </p>
+
+</section>
+<section class='' data-state='' id='slide-16'>
+  <h2>Export as postscript</h2>
+  <pre><code class="r">postscript(&quot;visuals/eurry_largest_clique.eps&quot;, fonts=c(&quot;sans&quot;, &quot;Helvetica&quot;))
+plot(induced.subgraph(eurry.graph2, lc[[1]]), 
+     layout=layout.fruchterman.reingold, 
+     vertex.label.family=&quot;sans&quot;,
+     edge.label.family=&quot;Helvetica&quot;, 
+     vertex.label.cex=1,
+     edge.label.cex=2, 
+     edge.color = &quot;gray80&quot;)
+dev.off()
+</code></pre>
+
+<pre><code>## pdf 
+##   2
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-17'>
+  <h2>Adobe Illustrator plays well with eps files</h2>
+  <p><img src='visuals/illustrator1.png'></p>
+
+</section>
+<section class='' data-state='' id='slide-18'>
+  <h2>Vector-based graphics</h2>
+  <h3>Select &gt; Same &gt; Appearance</h3>
+
+<p><img src='visuals/nodes2.png'></p>
+
+</section>
+<section class='' data-state='' id='slide-19'>
+  <h2>Vector-based graphics</h2>
+  <h3>Select &gt; Object &gt; Text Objects</h3>
+
+<p><img src='visuals/labels3.png'></p>
+
+</section>
+<section class='' data-state='' id='slide-20'>
+  <h2>Not bad huh?</h2>
+  <p><img src='visuals/eurry_largest_clique-01.png'></p>
+
+</section>
+<section class='' data-state='' id='slide-21'>
+  <h2>My entire Facebook social network</h2>
+  <pre><code class="r">plot(eurry.graph2,
+     layout=layout.fruchterman.reingold, 
+     vertex.size = 2.0, 
+     vertex.color = &quot;dark blue&quot;,
+     vertex.label = NA)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10"> </p>
+
+</section>
+<section class='' data-state='' id='slide-22'>
+  <h2>Prepare data for Gephi</h2>
+  <pre><code class="r">eurry.el.gephi &lt;- eurry.el
+colnames(eurry.el.gephi) &lt;- c(&quot;Source&quot;,&quot;Target&quot;)
+write.table(eurry.el.gephi, file = &quot;datasets/eurry_fb_network_gephi.csv&quot;, sep = &quot;,&quot;, quote = FALSE)
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-23'>
+  <h2>Load the edgelist</h2>
+  <p><img src='visuals/gephi1.png'></p>
+
+</section>
+<section class='' data-state='' id='slide-24'>
+  <h2>Play around</h2>
+  <p><img src='visuals/gephi2.png'></p>
+
+</section>
+<section class='' data-state='' id='slide-25'>
+  <h2>Social TV Conversations on Facebook</h2>
+  <pre><code class="r">fb.socialtv &lt;- read.csv(&quot;datasets/fb_socialtv_3july.csv&quot;, header = TRUE, stringsAsFactors = FALSE)
+head(fb.socialtv)
+</code></pre>
+
+<pre><code>##   channel_name series_name parent_convo_type
+## 1          ABC   Black Box              like
+## 2          ABC   Black Box              like
+## 3          ABC   Black Box              like
+## 4          ABC   Black Box              like
+## 5          ABC   Black Box              like
+## 6          ABC   Black Box              like
+##                    parent_convo_id child_convo_type child_convo_id
+## 1 afb665ae093f7ad70dfb27ec25858d8e                                
+## 2 667f9c3edd2c6a2839252fd50ba341c4                                
+## 3 a72b9d5c27dd710d02b551810e73db71                                
+## 4 4f74057d759dcaa3f3151abf25ff7a0f                                
+## 5 7012711de9181d3d1d65f57148795ea1                                
+## 6 a3ce4c7ff3fc2491990039359bb147bf
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-26'>
+  <h2>About the dataset</h2>
+  <pre><code class="r">table(fb.socialtv$parent_convo_type, fb.socialtv$child_convo_type)
+</code></pre>
+
+<pre><code>##          
+##                  comment   like
+##   comment  44014      11  64625
+##   like    215968    5518  16317
+##   link      1431    2791   5070
+##   photo     1671   14864  53260
+##   reshare   1009    1622   4916
+##   video       42     420   1046
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-27'>
+  <h2>Data definitions</h2>
+  <p>Think about how Facebook conversations happen.</p>
+
+<ul class = "build incremental">
+<li>Starts with a post containing link, photo, or video</li>
+<li>Friends can like, comment, or reshare that content</li>
+<li>Friends can like those comments or those reshares</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-28'>
+  <h1>Recap &amp; Takeaways</h1>
+  <ul>
+<li>Iterate, iterate, iterate</li>
+<li>Refer back to Tufte&#39;s principles for graphic excellence</li>
+<li>Be inspired by other work</li>
+<li>How would you visualize better?</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-29'>
+  <h1>Resources</h1>
+  <ul>
+<li><a href="http://flowingdata.com/">FlowingData.com</a></li>
+<li><a href="http://junkcharts.typepad.com/">JunkCharts</a></li>
+<li><a href="http://www.perceptualedge.com/blog/">Stephen Few</a></li>
+<li><a href="http://www.propublica.org/tools/">ProPublica</a></li>
+<li><a href="http://www.edwardtufte.com/tufte/">Edward Tufte</a></li>
+<li><a href="https://github.com/mbostock/d3/wiki/Gallery">D3</a></li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-30'>
+  <h1>Thanks</h1>
+  <p>This presentation was produced in <a href="http://www.rstudio.com/">RStudio</a> thanks to the <a href="http://ramnathv.github.io/slidify/">slidify</a> package and the <a href="http://lab.hakim.se/reveal-js/#/">revealjs</a> framework. It was typeset in <a href="https://www.google.com/fonts/specimen/Quicksand">Quicksand</a> and <a href="https://www.google.com/fonts/specimen/Raleway">Raleway</a>. </p>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="./frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="./frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'sky', 
+    transition: Reveal.getQueryHash().transition || 'linear', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: './frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: './frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: './frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: './frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="./highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
